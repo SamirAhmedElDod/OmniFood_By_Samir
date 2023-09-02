@@ -1,0 +1,772 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+strong {
+  font-weight: 500;
+}
+
+/* 
+  ***** First Ways ******
+  -- here Alot OF Ways To Make The Hero Section
+  : First We Can Make A container With This Values ⬇️⬇️⬇️
+  .container Or hero Like We Have in This Template{
+    width: 1500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  Then After Container Must Have the Div With Grid Or Flex ⬇️⬇️⬇️
+  =>This With Grid =<
+  .hero {
+    max-width: 130rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+  =>This With Flex =<
+  .hero {
+    display: flex;
+    justify-content: space-between;
+  }
+  *************************
+  ************************
+  ***** Idea Of Hero Section *****
+  1 ==> Container Or Grid With Margin auto
+  2 ==> 2 divs for Grid div.text div.img
+  3 ==> text div easy About h1 , p , a>button -- just Some Block Element
+  4 ==> img width 100%
+  5 ==> inside text div Made another Div for Flex and imgs beside p
+*/
+/* Start Hero Section */
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+.hero {
+  max-width: 130rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.heading-primary {
+  line-height: 1.05;
+  /* max-width: 550px; */
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  font-size: 5.2rem;
+  color: #333;
+  margin-bottom: 3.2rem;
+}
+.hero-description {
+  line-height: 1.6;
+  font-size: 2rem;
+  margin-bottom: 4.2rem;
+  /* max-width: 535px; */
+}
+.hero-img-box .hero-img {
+  width: 100%;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e0;
+  /* Trick To Use Border On Hover And Dont MAke the content Jump Up */
+  /* --First Trick ⬇️⬇️⬇️ */
+  /* outline: 3px solid white; */
+  /* -- Second Trick ⬇️⬇️⬇️ */
+  box-shadow: inset 0 0 0 3px #555;
+}
+.margin-right-sm {
+  margin-right: 1.6rem;
+}
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+.delivered-imgs {
+  display: flex;
+}
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 100%;
+  border: 3px solid white;
+  margin-right: -1.6rem;
+}
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+/* End Hero Section */
+
+/* Start Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  padding: 0 4.8rem;
+  /* Height For Make It Sticky Later  */
+  height: 9.6rem;
+  position: relative;
+}
+.logo {
+  height: 2.2rem;
+}
+.main-nav .main-nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+.main-nav .main-nav-list .main-nav-link:link,
+.main-nav .main-nav-list .main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+.main-nav .main-nav-list .main-nav-link:hover,
+.main-nav .main-nav-list .main-nav-link:active {
+  color: #cf711f;
+}
+.main-nav {
+  display: flex;
+}
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #e67e22;
+  color: #fff !important;
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+}
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+/* MOBILE ICON  */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+/* MOBILE ICON  */
+/* End Header Section */
+/* Start How It Works Section */
+.section-how {
+  padding: 9.6rem 0;
+  /* background-color: orangered; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px; */
+}
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  
+}
+
+.grid:not(:last-child){
+  margin-bottom: 9.6rem;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+.grid--center-v {
+  align-items: center;
+}
+.step-img {
+  width: 35%;
+}
+.subheading {
+  color: #e67e22;
+  display: block;
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+}
+.heading-secondary {
+  font-size: 4.4rem;
+  margin-bottom: 9.6rem;
+  color: #333;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+}
+.step-number {
+  font-size: 8.6rem;
+  margin-bottom: 1.2rem;
+  color: #ddd;
+  font-weight: bold;
+}
+.heading-tertiary {
+  margin-bottom: 3.2rem;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #333;
+}
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+.step-img-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-img-box::before {
+  content: "";
+  display: block;
+  width: 60%;
+  padding-bottom: 60%;
+  border-radius: 50%;
+  background-color: #fdf2e9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+.step-img-box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  width: 45%;
+  background-color: #fae5d3;
+  padding-bottom: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+/* End How It Works Section */
+
+/* Start befor Section How */
+.Section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+
+}
+.heading-featured-in {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  margin: 2.4rem 0;
+  color: #999;
+}
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* 
+  ***********************************
+  Two Ways One With Flex And Grid
+  ***********************************
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-content: center; */
+  /* gap: 20px; */
+  /* padding:0 40px; */
+  /* ********************************** */
+}
+.logos img {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+/* Start befor Section How  */
+
+/* Start Meals Section */
+.section-meals {
+  padding: 9.6rem 0;
+}
+.meal-tags {
+  margin-bottom: 1.2rem;
+}
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.075);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+.tag--vegen {
+  background-color: #94d82d;
+}
+.tag--paleo {
+  background-color: #ffd43b;
+}
+.section-meals .subheading {
+  text-align: center;
+  color: #d0711f;
+}
+.section-meals .heading-secondary {
+  text-align: center;
+}
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+.meal-attributes{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.meal-img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+.center-text {
+  text-align: center;
+}
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgb(0 0 0 / 6%);
+}
+/* End Meals Section */
+/* Start Testomonil */
+.section-testimonils {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  background-color: #fdf2e9;
+  align-items: center;
+}
+.testimonils {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+  
+}
+.testemonils-container {
+  padding: 9.6rem ;
+}
+.testimoil-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+.testimoinl-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+.testimonil-name {
+  font-size: 1.6rem;
+  color: #777;
+}
+.gallery-item img{
+  display: block;
+  width: 100%;
+  transition: all 0.3s;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.gallery-item {
+  overflow: hidden;
+}
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+/* End Testomonil */
+/* Start Pricing */
+.section-pricing {
+  padding: 9.6rem 0;
+}
+/* End Pricing */
+/* Start Pricing */
+.pricing-plan--starter {
+  justify-self: end;
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+.pricing-plan {
+  
+  border-radius: 11px;
+  
+  width: 75%;
+}
+.plan-name {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.plan-sign-up {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+.pricing-plan--complete {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-plan--complete::after {
+  content: "BEST VALUE";
+  background-color: #ffd43b;
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: 700;
+  top: 6%;
+  right: -18%;
+  color: #333;
+  padding: 0.8rem 8rem;
+  transform: rotate(45deg);
+  
+}
+.feature-icon {
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  background-color: #fdf2e9;
+  padding: 1.6rem;
+  border-radius: 50%;
+  margin-bottom: 3.2rem;
+}
+.feature-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+/* End Pricing */
+/* Start Cta */
+.section-cta {
+  padding: 4.8rem 0 12.8rem 0;
+}
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #e67e22; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0,0,0,0.15);
+  border-radius: 11px;
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  /* height: 50rem; */
+  overflow: hidden;
+}
+.cta-img-box {
+  background-image: linear-gradient(to right bottom, rgba(235, 151, 28, 0.35), rgba(230, 125, 34, 0.35)), url('../img/eating.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.cta-text-box {
+  color: #45260a;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+.cta .heading-secondary {
+  color: #45260a;
+  margin-bottom: 3.2rem;
+}
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+.cta-form label { 
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.cta-form input,
+.cta-form select { 
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0,0,0, 0.1);
+}
+.cta-form input::placeholder {
+  color: #aaa;
+}
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem ;
+}
+.btn--form:hover {
+  background-color: white;
+  color: #555;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+/* End Cta */
+/* Start Footer  */
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.footer-nav {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #777;
+  transition: all 0.3s;
+}
+.footer-link:hover,
+.footer-link:active  {
+  color: #555;
+}
+.social-links {
+  list-style-type: none;
+  display: flex;
+  gap: 2.4rem;
+}
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
+}
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.address {
+  margin-bottom: 2.4rem;
+}
+/* End Footer  */
+
+/* Sticky Style */
+.sticky {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.97);
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 1.2rem 3.2rem rgba(0,0,0,0.03);
+}
